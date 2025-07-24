@@ -8,7 +8,7 @@ const router = useRouter()
 const error = ref('')
 
 const login = () => {
-  if (username.value.toLowerCase() === 'raju' && password.value === '143') {
+  if (username.value.toLowerCase() === 'raju' && password.value === 'raju@123') {
     router.push('/dashboard')
   } else {
     error.value = 'Invalid Credentials'
@@ -33,10 +33,14 @@ const login = () => {
           placeholder="Enter your password"
           @keyup.enter="login"
         />
-        <p v-if="error">{{ error }}</p>
+        <p class="para" v-if="error">{{ error }}</p>
       </div>
 
       <center><button @click="login">Login</button></center>
+
+      <p>Login Credentials:</p>
+      <p>Username : raju</p>
+      <p>Password : raju@123</p>
     </div>
   </div>
 </template>
@@ -51,7 +55,7 @@ body,
 </style>
 
 <style scoped>
-p {
+.para {
   color: red;
 
   padding: 10px;
